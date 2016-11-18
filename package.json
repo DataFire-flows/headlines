@@ -1,0 +1,15 @@
+{
+  "name": "headlines",
+  "version": "1.0.0",
+  "description": "Send yourself an e-mail with the latest items from a few RSS feeds.",
+  "main": "headlines.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "btoa": "^1.1.2",
+    "datafire": "^1.0.0"
+  }
+}
