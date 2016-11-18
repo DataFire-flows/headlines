@@ -8,5 +8,5 @@ functions:
   headlines:
     handler: headlines.handler
     events:
-      - schedule: rate(1 minute)
+      - schedule: rate(1 day)
 
