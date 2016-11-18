@@ -1,5 +1,5 @@
 # DataFire - News Headlines
-> This is a reference project for [DataFire](/DataFire/DataFire)
+> This is a reference project for [DataFire](https://github.com/DataFire/DataFire)
 
 Send yourself an e-mail with the latest items from a few RSS feeds.
 
