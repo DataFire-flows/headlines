@@ -9,6 +9,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@datafire/cnn-rss": "0.0.1",
+    "@datafire/google-gmail": "0.0.1",
+    "@datafire/npr-rss": "0.0.1",
+    "@datafire/nytimes-rss": "0.0.1",
     "btoa": "^1.1.2",
     "datafire": "^1.0.0"
   }

@@ -12,8 +12,7 @@ git clone https://github.com/DataFire/headlines
 cd headlines
 npm install
 
-datafire integrate gmail cnn npr nytimes
-datafire authenticate gmail --generate_token
+datafire authenticate google-gmail --generate_token
 # Follow the command-line prompts
 
 datafire run headlines

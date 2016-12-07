@@ -2,46 +2,27 @@
 
 let btoa = require('btoa');
 let datafire = require('datafire');
+let makeEmail = require('./email');
 let flow = module.exports = new datafire.Flow('Headlines', "Get headlines from several news sources in your inbox");
 
-let gmail = datafire.Integration.new('gmail').as('default');
+let gmail = datafire.Integration.new('google-gmail').as('default');
+let cnn = datafire.Integration.new('cnn-rss');
+let npr = datafire.Integration.new('npr-rss');
+let nytimes = datafire.Integration.new('nytimes-rss');
 
 const RSS_FEEDS = ['cnn', 'nytimes', 'npr'];
 const MAX_ITEMS_PER_FEED = 8;
 
-let rssIntegrations = {};
-RSS_FEEDS.forEach(f => rssIntegrations[f] = datafire.Integration.new(f))
-
-let makeEmail = (to, from, subject, body) => {
-   return `
-
-From: <${from}>
-To: <${to}>
-Subject: ${subject}
-Date: ${new Date().toString()}
-Content-Type: text/html; charset=utf-8
-
-<html>
-  <body>
-${body}
-  </body>
-</html>
-
-  `.trim();
-}
-
-let encodeMessage = (message) => {
-  message = new Buffer(message).toString('base64');
-  return message.replace(/\//g,'_').replace(/\+/g,'-');
-}
-
-RSS_FEEDS.forEach(f => {
-  flow.step(f, {
-    do: rssIntegrations[f].getItems(),
-  })
-})
-
 flow
+  .step('cnn', {
+    do: cnn.topStories(),
+  })
+  .step('nytimes', {
+    do: nytimes.homePage(),
+  })
+  .step('npr', {
+    do: npr.news(),
+  })
   .step('user', {
     do: gmail.get('/{userId}/profile'),
     params: {userId: 'me'},
@@ -59,11 +40,10 @@ flow
           body += `<p><a href="${entry.link}">${entry.title}</a></p>`
         })
       })
-      let msg = makeEmail(addr, addr, 'News Headlines', body);
       return {
         userId: 'me',
         body: {
-          raw: encodeMessage(msg)
+          raw: makeEmail(addr, addr, 'News Headlines', body),
         }
       }
     }
