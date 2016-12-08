@@ -1,5 +1,7 @@
-var makeEmail = module.exports = (to, from, subject, body) => {
-   var message = `
+"use strict";
+
+let makeEmail = module.exports = (to, from, subject, body) => {
+   let message = `
 
 From: <${from}>
 To: <${to}>
