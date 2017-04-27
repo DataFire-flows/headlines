@@ -3,24 +3,26 @@
 
 Send yourself an e-mail with the latest items from a few RSS feeds.
 
-To use this flow, first create a GMail client in the
+To use this action, first create a Gmail client in the
 [Google Dev Console](https://console.developers.google.com)
-by clicking "Enable API", choosing GMail, then "Credentials" -> "Create Credentials" -> "OAuth Client ID"
+by clicking "Enable API", choosing Gmail, then "Credentials" -> "Create Credentials" -> "OAuth Client ID"
 
 ```
 git clone https://github.com/DataFire/headlines
 cd headlines
 npm install
 
-datafire authenticate google-gmail --generate_token
+datafire authenticate google_gmail --alias gmail_user
 # Follow the command-line prompts
 
-datafire run headlines
+datafire run ./headlines.js
 ```
 
-## Serverless
-Runs every day by default. You can change this in `serverless.yml`
+## Run on a schedule
+To run this action every day, run:
 
 ```
-serverless deploy -v
+datafire serve --tasks &
 ```
+
+You can also change the schedule by editing DataFire.yml
