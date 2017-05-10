@@ -22,6 +22,6 @@ ${body}
 
 let encodeMessage = (message) => {
   message = new Buffer(message).toString('base64');
-  return message.replace(/\//g,'_').replace(/\+/g,'-');
+  return message.replace(/\//g,'_').replace(/\+/g,'-').replace(/=+$/, '');
 }
 
