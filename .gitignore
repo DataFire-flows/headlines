@@ -1,3 +1,2 @@
-.serverless/
 node_modules/
-credentials/
+DataFire-accounts.yml
