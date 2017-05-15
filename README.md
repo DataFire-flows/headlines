@@ -12,7 +12,7 @@ git clone https://github.com/DataFire/headlines
 cd headlines
 npm install
 
-datafire authenticate google_gmail --alias gmail_user
+datafire authenticate google_gmail --alias google_gmail
 # Follow the command-line prompts
 
 datafire run ./headlines.js
