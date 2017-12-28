@@ -1,6 +1,4 @@
 tasks:
   headlines:
     action: ./headlines
-    accounts:
-      google_gmail: gmail_user
     schedule: rate(1 day)

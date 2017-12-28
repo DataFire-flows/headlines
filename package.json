@@ -10,9 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "@datafire/cnn_rss": "2.0.0",
-    "@datafire/google_gmail": "2.0.0",
+    "@datafire/google_gmail": "^3.1.0",
     "@datafire/npr_rss": "2.0.0",
     "@datafire/nytimes_rss": "2.0.0",
-    "datafire": "^2.0.0"
+    "datafire": "^2.17.0"
   }
 }

@@ -1,12 +1,19 @@
 # DataFire - News Headlines
-> This is a reference project for [DataFire](https://github.com/DataFire/DataFire)
 
 Send yourself an e-mail with the latest items from a few RSS feeds.
 
-To use this action, first create a Gmail client in the
-[Google Dev Console](https://console.developers.google.com)
-by clicking "Enable API", choosing Gmail, then "Credentials" -> "Create Credentials" -> "OAuth Client ID"
+[Run this project on DataFire.io](https://app.datafire.io/projects?baseRepo=https:%2F%2Fgithub.com%2FDataFire-flows%2Fheadlines)
 
+## Manual Setup
+
+If you want to run this project yourself (rather than on DataFire.io), you'll need to create a Gmail client:
+
+* Visit [Google Dev Console](https://console.developers.google.com),
+* Click "Enable API"
+* Choose Gmail
+* Go to "Credentials" -> "Create Credentials" -> "OAuth Client ID"
+
+Then run:
 ```
 git clone https://github.com/DataFire/headlines
 cd headlines
